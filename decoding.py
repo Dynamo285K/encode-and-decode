@@ -45,3 +45,17 @@ def decoding(list1):
 
 
 print(decoding(list1))
+import tkinter as tk
+root = tk.Tk()
+
+root.title("tajna sprava")
+w = 800
+h = 800
+canvas = tk. Canvas(width=w, height=h,bg = "white")
+
+def text():
+    canvas.create_text(400,400,fill="darkblue",font="Times 20 italic bold",text=decoding(list1))
+    canvas.update
+text()
+canvas.pack()
+root.mainloop()

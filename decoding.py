@@ -1,7 +1,5 @@
 import PIL
 from PIL import Image
-import PIL
-from PIL import Image
 pic = Image.open("pic_with_mes.png")
 pixels = pic.load()
 lenght = 8
@@ -11,23 +9,24 @@ height = pic.size[1]
 
 
 def getting_blue():
-    global zoz
-    zoz = []
+    global list1
+    list1 = []
     for y in range(height):
         for x in range(width):
             pixelblue = pixels[x,y][2]
             blue = bin(pixelblue)
-            zoz.append(blue[-1])
-    return zoz
+            list1.append(blue[-1])
+    #print(list1)
+    return list1
 
 
 
 getting_blue()
 
-def decoding(zoz):
+def decoding(list1):
     message = ""
     number = ""
-    for znak in zoz:
+    for znak in list1:
         x = ""
         number += znak
         if len(number) == lenght:
@@ -45,4 +44,4 @@ def decoding(zoz):
 # pixels = pic.load()
 
 
-print(decoding(zoz))
+print(decoding(list1))
